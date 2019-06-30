@@ -4,9 +4,12 @@
  * This generated file contains a sample Kotlin library project to get you started.
  */
 
+// how to: https://github.com/jhipster/jhipster-kotlin/blob/master/generators/server/templates/gradle/kotlin.gradle.ejs
+
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM.
-    id("org.jetbrains.kotlin.jvm").version("1.3.21")
+    id("org.jetbrains.kotlin.jvm") version "1.3.21"
+    groovy
 }
 
 repositories {
@@ -15,13 +18,26 @@ repositories {
     jcenter()
 }
 
+//val test by tasks.getting(Test::class) {
+//    useJUnitPlatform { }
+//}
+
 dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    implementation("io.micrometer:micrometer-core:1.1.3")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+
+    // Use the Kotlintest
+    testImplementation("io.kotlintest:kotlintest-runner-junit5:3.3.1")
+
+//    testImplementation("org.codehaus.groovy:groovy-all:2.4.4")
+    testImplementation("org.spockframework:spock-core:1.3-groovy-2.5")
+//    testImplementation("cglib:cglib-nodep:3.2.6")
 }

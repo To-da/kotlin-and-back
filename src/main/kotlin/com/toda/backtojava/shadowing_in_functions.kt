@@ -14,7 +14,7 @@ import java.util.*
  *
  * or param -Werror can be used  -> warnings are switched to error on compile time
  *
- * 
+ *
  * It can be worse:
  * Python:
  *  def inc(num):
@@ -71,6 +71,8 @@ class PropertyShadowingSubclass(override var num: Int = -5) : PropertyShadowingS
         }
         println("num: $num")
     }
+
+    fun intToString(num: Int) = num.toString()
 }
 
 //sealed
